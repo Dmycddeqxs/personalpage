@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>个人网页</title>
+    <style>
+        body {
+            background-image: url('pic.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: top left;
+            background-attachment: fixed;
+            padding: 20px;
+            margin: 0;
+            color: white;
+            text-align: center;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        table {
+            margin: 20px auto;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid white;
+            padding: 10px;
+            color: black;
+            font-size: 20px;
+        }
+        #musicButton {
+            position: fixed;
+            left: 20px;
+            bottom: 20px;
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+<h3>欢迎来到MSY的个人网页</h3>
+
+<p></p>
+
+<img src="justdoit.jpg" alt="Just Do It !" width="700" height="450">
+
+<table>
+    <tr>
+        <td>电话</td>
+        <td>***********</td>
+    </tr>
+    <tr>
+        <td>邮箱</td>
+        <td>***********</td>
+    </tr>
+</table>
+
+<audio id="bgm" loop>
+    <source src="raindrop.mp3" type="audio/mpeg">
+    您的浏览器不支持音频元素。
+</audio>
+
+<button id="musicButton" onclick="toggleMusic()">播放/暂停 BGM</button>
+
+<script>
+    const bgm = document.getElementById('bgm');
+
+    function toggleMusic() {
+        if (bgm.paused) {
+            bgm.play();
+            document.getElementById('musicButton').innerText = '暂停 BGM';
+        } else {
+            bgm.pause();
+            document.getElementById('musicButton').innerText = '播放 BGM';
+        }
+    }
+</script>
+
+
+</body>
+</html>
